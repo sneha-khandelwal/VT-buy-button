@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Bar with Countdown Timer - Installation and Guide</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 110vh;
+            box-sizing: border-box;
+        }
+        header {
+            background-color: #333333; /* WhatsApp Green */
+            color: white;
+            padding: 15px 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.5em;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: stretch;
+            padding: 15px 20px;
+        }
+
+        header img {
+            height: 45px;
+            width: 45px;
+        }
+
+        .container {
+            margin-top: -14em;
+            text-align: center;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 600px;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            color: #666666;
+            margin-bottom: 20px;
+        }
+        .footer p {
+            color: #fff;
+        }
+        p {
+            font-size: 1.1em;
+            color: #666666;
+            margin-bottom: 10px;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background-color: #333333; /* WhatsApp Green */
+            color: #fff;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: lightgray; /* Darker WhatsApp Green */
+        }
+
+        .cta-button:active {
+            background-color: #25D366;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 1.1em;
+            color: #6d2727;
+            background-color: #333333;
+            padding: 10px 0;
+        }
+
+        .footer a {
+            color: #f82424e8;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .guide-section {
+            margin-left: 7%;
+            width: 40%;
+            text-align: left;
+            margin-top: 40px;
+            padding: 40px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .guide-section h2 {
+            color: #666666;
+            font-size: 1.7em;
+            margin-bottom: 15px;
+        }
+
+        .guide-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .guide-section li {
+            font-size: 1em;
+            color: #555;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Add Logo to the left of the header -->
+        <img src="images/vid_logo-removebg-preview.png" alt="Logo" style="background-color: white; padding: 5px; border-radius: 5px;">
+
+        <span>Buy Now Button</span>
+    </header>
+    
+    <div class="container">
+        <h1>Welcome to the Buy Now Button App!</h1>
+        <p>Enhance your website’s user experience by integrating a customizable announcement bar with a countdown timer to create urgency for your offers and promotions.</p>
+
+        <!-- Install Button -->
+        <button id="redirectButton" class="cta-button">Get Started</button>
+    </div>
+
+    <!-- Guide Section -->
+    <div class="guide-section">
+        <h2>How to Install and Use the Buy Now Button</h2>
+        <p>Follow these steps to install and start using Buy Now Button on your website.</p>
+        
+        <ul>
+            <li><strong>Step 1:</strong> Log in to your Shopify Admin Panel.</li>
+            <li><strong>Step 2:</strong> Click the "Install Now" button above.</li>
+            <li><strong>Step 3:</strong> Grant the required permissions.</li>
+            <li><strong>Step 4:</strong> Access the Buy Now Button settings in Shopify.</li>
+            <li><strong>Step 5:</strong> Customize the button placement and design.</li>
+            <li><strong>Step 6:</strong> Save your settings and activate the button.</li>
+        </ul>
+
+        <p><strong>How the Buy Now Button Works:</strong></p>
+        <ul>
+            <li>The Buy Now button allows customers to instantly purchase a product by adding it to the cart and redirecting them directly to the checkout page.</li>
+            <li>This eliminates unnecessary steps, making the buying process fast, seamless, and efficient..</li>
+            <li>It enhances conversion rates by reducing friction in the checkout process, leading to a higher likelihood of successful purchases.</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p>Have questions? <a href="mailto:support@announcementbarapp.com">Contact us</a></p>
+    </div>
+
+    <script>
+        document.getElementById('redirectButton').addEventListener('click', function () {
+            const shopName = "<%= shopName %>"; // Shopify Liquid variable to dynamically fetch shop name
+            // Redirect to the authentication URL with the shop parameter
+            window.location.href = `/auth?shop=${shopName}`; // Adjust the URL as per your app's requirements
+        });
+    </script>
+</body>
+</html>
