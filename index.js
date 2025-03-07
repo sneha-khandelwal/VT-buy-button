@@ -25,15 +25,23 @@ app.use(express.static('public'));
 
 app.get('/', (req, res) => {
     const shop = req.query.shop;  
-    res.render('install', { title: 'My Home Page', message: 'Welcome to Node.js with EJS!',shopName:shop });
+    res.render('install', { title: 'My Home Paggggge', message: 'Welcome to Node.js with EJS!',shopName:shop });
   });
 
 
 // Home route to start the OAuth flow
 app.get('/auth', (req, res) => {
+  console.log('working....', req.query.shop)
   const shop = req.query.shop;
   const installUrl = `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SHOPIFY_SCOPE}&redirect_uri=${SHOPIFY_REDIRECT_URI}`;
+ 
+ console.log('The installurl is ',installUrl)
   res.redirect(installUrl);
+//   if (req.headers['sec-fetch-dest'] === 'iframe') {
+//     res.json({ installUrl });
+// } else {
+//     res.redirect(installUrl);
+// }
 });
 
 // OAuth callback to handle the token exchange
