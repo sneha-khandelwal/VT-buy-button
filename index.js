@@ -38,9 +38,10 @@ app.get('/auth', (req, res) => {
  
   // res.redirect(installUrl);
   if (req.headers['sec-fetch-dest'] === 'iframe') {
-    res.json({ installUrl });
-} else {
     res.redirect(installUrl);
+    
+} else {
+  res.json({ installUrl });
 }
 });
 
