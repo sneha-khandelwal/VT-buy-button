@@ -35,7 +35,7 @@ app.get('/auth', (req, res) => {
   const shop = req.query.shop;
   const installUrl = `https://${shop}/admin/oauth/authorize?client_id=${SHOPIFY_API_KEY}&scope=${SHOPIFY_SCOPE}&redirect_uri=${SHOPIFY_REDIRECT_URI}`;
  
- console.log('The installurl is ',installUrl)
+ 
   // res.redirect(installUrl);
   if (req.headers['sec-fetch-dest'] === 'iframe') {
     res.json({ installUrl });
